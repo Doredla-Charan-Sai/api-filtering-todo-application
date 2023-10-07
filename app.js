@@ -114,6 +114,7 @@ app.put("/todos/:todoId/", async (request, response) => {
       b = `UPDATE todo SET priority = '${priority}' WHERE id = ${todoId};`;
       await db.run(b);
       response.send("Priority Updated");
+      break;
     case hasTodo(request.body):
       let { todo } = request.body;
       c = `UPDATE todo SET todo = '${todo}' WHERE id = ${todoId};`;
